@@ -1,0 +1,1280 @@
+{
+    "cities": [
+        "Alba Iulia",
+        "Alexandria",
+        "Arad",
+        "Azuga",
+        "Bacău",
+        "Baia Mare",
+        "Baia Sprie",
+        "Beiuș",
+        "Bicaz",
+        "Bistrița",
+        "Bocșa",
+        "Botoșani",
+        "Brad",
+        "Bragadiru",
+        "Brașov",
+        "Brăila",
+        "București",
+        "Buftea",
+        "Buhuși",
+        "Bumbești-Jiu",
+        "Buzău",
+        "Bușteni",
+        "Bârlad",
+        "Băile Herculane",
+        "Calafat",
+        "Caracal",
+        "Cernavodă",
+        "Chitila",
+        "Cisnădie",
+        "Cluj-Napoca",
+        "Codlea",
+        "Constanța",
+        "Costinești",
+        "Covasna",
+        "Craiova",
+        "Câmpina",
+        "Călărași",
+        "Dej",
+        "Deva",
+        "Drobeta-Turnu Severin",
+        "Drăgășani",
+        "Dărmănești",
+        "Eforie Nord",
+        "Fieni",
+        "Focșani",
+        "Făgăraș",
+        "Galați",
+        "Gherla",
+        "Ghimbav",
+        "Giurgiu",
+        "Gura Humorului",
+        "Găești",
+        "Hunedoara",
+        "Iași",
+        "Ineu",
+        "Jupiter",
+        "Lipova",
+        "Luduș",
+        "Lugoj",
+        "Lupeni",
+        "Mamaia",
+        "Mamaia-Sat",
+        "Mangalia",
+        "Medgidia",
+        "Miercurea-Ciuc",
+        "Mizil",
+        "Măgurele",
+        "Mărășești",
+        "Năvodari",
+        "Odobești",
+        "Olimp",
+        "Oradea",
+        "Orăștie",
+        "Orșova",
+        "Otopeni",
+        "Ovidiu",
+        "Pantelimon",
+        "Pașcani",
+        "Petroșani",
+        "Piatra-Neamț",
+        "Pitești",
+        "Ploiești",
+        "Plopeni",
+        "Popești-Leordeni",
+        "Predeal",
+        "Reghin",
+        "Reșița",
+        "Roman",
+        "Rovinari",
+        "Râmnicu Sărat",
+        "Râmnicu Vâlcea",
+        "Râșnov",
+        "Rădăuți",
+        "Satu Mare",
+        "Sebeș",
+        "Sector 1",
+        "Sector 2",
+        "Sector 3",
+        "Sector 4",
+        "Sector 5",
+        "Sector 6",
+        "Sfântu Gheorghe",
+        "Sibiu",
+        "Sighetu Marmației",
+        "Sighișoara",
+        "Sinaia",
+        "Slatina",
+        "Slobozia",
+        "Slănic-Moldova",
+        "Sovata",
+        "Suceava",
+        "Sânnicolau Mare",
+        "Săcele",
+        "Tecuci",
+        "Timișoara",
+        "Topoloveni",
+        "Tulcea",
+        "Turda",
+        "Turnu Măgurele",
+        "Târgoviște",
+        "Târgu Frumos",
+        "Târgu Jiu",
+        "Târgu Mureș",
+        "Târgu Ocna",
+        "Târgu Secuiesc",
+        "Târnăveni",
+        "Ultracentral",
+        "Uricani",
+        "Urlați",
+        "Vaslui",
+        "Voluntari",
+        "Zalău",
+        "Țăndărei"
+    ],
+    "city_neighborhoods": {
+        "Alba Iulia": [
+            "Central",
+            "Cetate",
+            "Tolstoi"
+        ],
+        "Alexandria": [
+            "Central"
+        ],
+        "Arad": [
+            "Alfa",
+            "Aurel Vlaicu",
+            "Bujac",
+            "Central",
+            "Confecții",
+            "Fortuna",
+            "Grădiște",
+            "Intim",
+            "Malul Mureșului",
+            "Micălaca",
+            "P-ța Spitalului",
+            "Podgoria",
+            "Romanilor",
+            "UTA",
+            "Ultracentral"
+        ],
+        "Azuga": [
+            "Central"
+        ],
+        "Bacău": [
+            "9 Mai",
+            "Alecu Russo",
+            "Alexandru cel Bun",
+            "Banca Națională",
+            "Bistrița Lac",
+            "Central",
+            "Cornișa",
+            "Milcov",
+            "Mioriței",
+            "Narcisa",
+            "Nord",
+            "Orizont",
+            "Republicii",
+            "Ultracentral",
+            "Unirii",
+            "Zimbru",
+            "Ștefan cel Mare"
+        ],
+        "Baia Mare": [
+            "Central",
+            "Decebal",
+            "Depozitelor",
+            "Hotvon",
+            "Independenței",
+            "Orașul Vechi",
+            "Republicii",
+            "Sud",
+            "Valea Borcutului",
+            "Vest"
+        ],
+        "Baia Sprie": [
+            "Central"
+        ],
+        "Beiuș": [
+            "Central"
+        ],
+        "Bicaz": [
+            "Central"
+        ],
+        "Bistrița": [
+            "Calea Moldovei",
+            "Central",
+            "Cetății",
+            "Decebal",
+            "Sud"
+        ],
+        "Bocșa": [
+            "Central"
+        ],
+        "Botoșani": [
+            "Central",
+            "Dragoș Vodă",
+            "Nord-Vest",
+            "Ultracentral",
+            "Vest"
+        ],
+        "Brad": [
+            "Central",
+            "Ultracentral"
+        ],
+        "Bragadiru": [
+            "Central",
+            "Est",
+            "Exterior Est",
+            "Haliu",
+            "Nord",
+            "Sud",
+            "Sud-Est",
+            "Sud-Vest",
+            "Ultracentral"
+        ],
+        "Brașov": [
+            "13 Decembrie",
+            "15 Noiembrie",
+            "Astra",
+            "Avantgarden",
+            "Bartolomeu",
+            "Blumăna",
+            "Brașovul Vechi",
+            "Calea București",
+            "Central",
+            "Centrul Civic",
+            "Centrul Istoric",
+            "Craiter",
+            "Dealul Cetății",
+            "Drumul Poienii",
+            "Dârste",
+            "Exterior Nord",
+            "Florilor",
+            "Gemenii",
+            "Griviței",
+            "Gării",
+            "Hărmanului",
+            "Județean",
+            "Noua",
+            "Periferie",
+            "Planete",
+            "Rulmentul",
+            "Răcădău",
+            "Schei",
+            "Scriitorilor",
+            "Stupini",
+            "Tractorul",
+            "Triaj",
+            "Ultracentral",
+            "Vlahuță"
+        ],
+        "Brăila": [
+            "Calea Galați",
+            "Central",
+            "Călărași",
+            "Dorobanți",
+            "Gării",
+            "Obor",
+            "Vidin-Progresul",
+            "Viziru 1",
+            "Viziru 3"
+        ],
+        "București": [
+            "Periferie"
+        ],
+        "Buftea": [
+            "Central"
+        ],
+        "Buhuși": [
+            "Central"
+        ],
+        "Bumbești-Jiu": [
+            "Central"
+        ],
+        "Buzău": [
+            "1 Decembrie",
+            "Aleea Sporturilor",
+            "Broșteni",
+            "Bălcescu",
+            "Contactoare",
+            "Crig",
+            "Dorobanți 2",
+            "Micro 14",
+            "Micro 5",
+            "Ultracentral",
+            "Unirii Sud"
+        ],
+        "Bușteni": [
+            "Central",
+            "Cezar Petrescu",
+            "Telecabinei",
+            "Valea Alba",
+            "Zamora"
+        ],
+        "Bârlad": [
+            "Central",
+            "Periferie"
+        ],
+        "Băile Herculane": [
+            "Central"
+        ],
+        "Calafat": [
+            "Nord-Est"
+        ],
+        "Caracal": [
+            "Central"
+        ],
+        "Cernavodă": [
+            "Central"
+        ],
+        "Chitila": [
+            "Nord",
+            "Sud-Vest"
+        ],
+        "Cisnădie": [
+            "Central",
+            "Exterior Sud",
+            "Nord-Est"
+        ],
+        "Cluj-Napoca": [
+            "Andrei Mureșanu",
+            "Aurel Vlaicu",
+            "Borhanci",
+            "Bulgaria",
+            "Bună Ziua",
+            "Calea Turzii",
+            "Central",
+            "Dâmbul Rotund",
+            "Europa",
+            "Florești",
+            "Gară",
+            "Gheorgheni",
+            "Grigorescu",
+            "Gruia",
+            "Horea",
+            "Iris",
+            "Mănăștur",
+            "Mărăști",
+            "P-ța Mihai Viteazul",
+            "Plopilor",
+            "Semicentral",
+            "Someșeni",
+            "Sopor",
+            "Ultracentral",
+            "Zorilor",
+            "Între Lacuri"
+        ],
+        "Codlea": [
+            "Central"
+        ],
+        "Constanța": [
+            "Abator",
+            "Anda",
+            "Aurel Vlaicu",
+            "Boema",
+            "Boreal",
+            "Brotăcei",
+            "Brătianu",
+            "CET",
+            "Capitol",
+            "Carrefour",
+            "Casa de Cultură",
+            "Central",
+            "City Park Mall",
+            "Coiciu",
+            "Dacia",
+            "Delfinariu",
+            "Elvila",
+            "Energia",
+            "Faleza Nord",
+            "Far",
+            "Gara",
+            "Groapa",
+            "ICIL",
+            "Inel I",
+            "Inel II",
+            "Kamsas",
+            "Km 4-5",
+            "Km 5",
+            "Nord",
+            "P-ța Ovidiu",
+            "Palazu Mare",
+            "Peninsula",
+            "Poarta 6",
+            "Primo",
+            "Sat Vacanță",
+            "Stadion",
+            "Sud",
+            "Tomis I",
+            "Tomis II",
+            "Tomis III",
+            "Tomis Mall",
+            "Tomis Nord",
+            "Tomis Plus",
+            "Trocadero",
+            "Ultracentral",
+            "Universitate"
+        ],
+        "Costinești": [
+            "Nord"
+        ],
+        "Covasna": [
+            "Central"
+        ],
+        "Craiova": [
+            "1 Mai",
+            "Bariera Vâlcii",
+            "Brazda lui Novac",
+            "Calea București",
+            "Central",
+            "Cornitoiu",
+            "Craiovița Nouă",
+            "Exterior Est",
+            "Exterior Vest",
+            "George Enescu",
+            "Lăpuș",
+            "Lăpuș Argeș",
+            "Nord-Est",
+            "Romanești",
+            "Rovine",
+            "Sărari",
+            "Titulescu",
+            "Valea Rosie"
+        ],
+        "Câmpina": [
+            "Autogară",
+            "Central",
+            "Milcov",
+            "Sud"
+        ],
+        "Călărași": [
+            "Nord"
+        ],
+        "Dej": [
+            "Central",
+            "Nord-Est"
+        ],
+        "Deva": [
+            "Astoria",
+            "Central",
+            "Dorobanți",
+            "Gojdu",
+            "Piața Centrală",
+            "Pietroasa",
+            "Ultracentral",
+            "Împăratul Traian"
+        ],
+        "Drobeta-Turnu Severin": [
+            "Aluniș",
+            "Central",
+            "Crihala",
+            "Kiseleff",
+            "Nord-Est"
+        ],
+        "Drăgășani": [
+            "Central"
+        ],
+        "Dărmănești": [
+            "Central"
+        ],
+        "Eforie Nord": [
+            "Central",
+            "Nord"
+        ],
+        "Fieni": [
+            "Central"
+        ],
+        "Focșani": [
+            "Bahne",
+            "Brăilei",
+            "Central",
+            "Est",
+            "Gară",
+            "Nord",
+            "Sud",
+            "Ultracentral",
+            "Vest"
+        ],
+        "Făgăraș": [
+            "Central"
+        ],
+        "Galați": [
+            "Bd. Coșbuc",
+            "Central",
+            "Faleză",
+            "I. C. Frimu",
+            "Mazepa 1",
+            "Mazepa 2",
+            "Micro 13",
+            "Micro 14",
+            "Micro 16",
+            "Micro 17",
+            "Micro 19",
+            "Micro 20",
+            "Micro 21",
+            "Micro 40",
+            "Port",
+            "Siderurgiștilor",
+            "Ultimul leu",
+            "Țiglina 1",
+            "Țiglina 2"
+        ],
+        "Gherla": [
+            "Central",
+            "Sud-Vest",
+            "Ultracentral"
+        ],
+        "Ghimbav": [
+            "Central"
+        ],
+        "Giurgiu": [
+            "Central",
+            "Semicentral",
+            "Tineretului"
+        ],
+        "Gura Humorului": [
+            "Central"
+        ],
+        "Găești": [
+            "Nord"
+        ],
+        "Hunedoara": [
+            "Central",
+            "Est"
+        ],
+        "Iași": [
+            "Aeroport",
+            "Aleea Tudor Neculai",
+            "Alexandru cel Bun",
+            "Arcu",
+            "Baza 3",
+            "Bucium",
+            "Bularga",
+            "Canta",
+            "Central",
+            "Centru Civic",
+            "Copou",
+            "Cug",
+            "Dacia",
+            "Dancu",
+            "Frumoasa",
+            "Galata",
+            "Gară",
+            "Lunca Cetățuii",
+            "Metalurgie",
+            "Mircea cel Bătrân",
+            "Moara de Vânt",
+            "Moara de foc",
+            "Nicolina",
+            "Oancea",
+            "Palat",
+            "Piața Unirii",
+            "Podu Roș",
+            "Podul de Fier",
+            "Podul de Piatră",
+            "Popas Păcurari",
+            "Păcurari",
+            "Tudor Vladimirescu",
+            "Târgu Cucu",
+            "Tătărași",
+            "Ultracentral",
+            "Valea Adâncă",
+            "Vișani",
+            "Zimbru"
+        ],
+        "Ineu": [
+            "Central"
+        ],
+        "Jupiter": [
+            "Central"
+        ],
+        "Lipova": [
+            "Central"
+        ],
+        "Luduș": [
+            "Central"
+        ],
+        "Lugoj": [
+            "Central"
+        ],
+        "Lupeni": [
+            "Central"
+        ],
+        "Mamaia": [
+            "Central",
+            "Est",
+            "Exterior Nord",
+            "Nord",
+            "Nord-Est",
+            "Sud",
+            "Ultracentral",
+            "Vest"
+        ],
+        "Mamaia-Sat": [
+            "Central",
+            "Est",
+            "Exterior Est",
+            "Exterior Sud",
+            "Nord",
+            "Nord-Est",
+            "Sud",
+            "Sud-Est"
+        ],
+        "Mangalia": [
+            "Central",
+            "Nord-Est"
+        ],
+        "Medgidia": [
+            "Central"
+        ],
+        "Miercurea-Ciuc": [
+            "Central"
+        ],
+        "Mizil": [
+            "Central"
+        ],
+        "Măgurele": [
+            "Central"
+        ],
+        "Mărășești": [
+            "Central"
+        ],
+        "Năvodari": [
+            "Central",
+            "Nord",
+            "Nord-Est",
+            "Sud",
+            "Vest"
+        ],
+        "Odobești": [
+            "Exterior Vest"
+        ],
+        "Olimp": [
+            "Central",
+            "Nord"
+        ],
+        "Oradea": [
+            "Calea Aradului",
+            "Cantemir",
+            "Central",
+            "Centru Civic",
+            "Cetății",
+            "Decebal",
+            "Iosia",
+            "Iosia-Nord",
+            "Nufărul",
+            "Rogerius",
+            "Spitalul Județean",
+            "Ultracentral"
+        ],
+        "Orăștie": [
+            "Central"
+        ],
+        "Orșova": [
+            "Central",
+            "Sud-Vest"
+        ],
+        "Otopeni": [
+            "Central",
+            "Est",
+            "Ferme",
+            "Nord",
+            "Odăi",
+            "Ultracentral"
+        ],
+        "Ovidiu": [
+            "Central"
+        ],
+        "Pantelimon": [
+            "Central",
+            "Est",
+            "Exterior Nord",
+            "Sud",
+            "Sud-Est"
+        ],
+        "Pașcani": [
+            "Central"
+        ],
+        "Petroșani": [
+            "Central"
+        ],
+        "Piatra-Neamț": [
+            "1 Mai",
+            "Calea Romanului",
+            "Central",
+            "Dărmănești",
+            "Est",
+            "Mărăței",
+            "Precista",
+            "Ultracentral"
+        ],
+        "Pitești": [
+            "Big-Bascov",
+            "Calea București",
+            "Ceair",
+            "Central",
+            "Craiovei",
+            "Eremia",
+            "Exercițiu",
+            "Frații Golești",
+            "Găvana",
+            "Găvana 2",
+            "Găvana 3",
+            "Găvana Platou",
+            "Negru Vodă",
+            "Nord",
+            "Popa Șapcă",
+            "Prundu",
+            "Războieni",
+            "Teilor",
+            "Trivale",
+            "Ultracentral"
+        ],
+        "Ploiești": [
+            "9 Mai",
+            "Albert",
+            "B-dul București",
+            "Cantacuzino",
+            "Central",
+            "Cina",
+            "Democrației",
+            "Eminescu",
+            "Exterior Nord",
+            "Gheorghe Doja",
+            "Malu Roșu",
+            "Mihai Bravu",
+            "Mărășești",
+            "Nord",
+            "Nord - Spitalul Județean",
+            "P-ța Mihai Viteazu",
+            "Republicii",
+            "Ultracentral",
+            "Vest",
+            "Vest - Lamâița"
+        ],
+        "Plopeni": [
+            "Central"
+        ],
+        "Popești-Leordeni": [
+            "Central",
+            "Est",
+            "Exterior Vest",
+            "Nord-Est",
+            "Nord-Vest",
+            "Periferie",
+            "Sud",
+            "Sud-Est",
+            "Vest"
+        ],
+        "Predeal": [
+            "Clăbucet",
+            "Orizont",
+            "Ultracentral"
+        ],
+        "Reghin": [
+            "Central"
+        ],
+        "Reșița": [
+            "Calea Timișoarei",
+            "Govândari",
+            "Micro III",
+            "Micro IV"
+        ],
+        "Roman": [
+            "Central",
+            "Ultracentral"
+        ],
+        "Rovinari": [
+            "Central"
+        ],
+        "Râmnicu Sărat": [
+            "Central-Piață"
+        ],
+        "Râmnicu Vâlcea": [
+            "1 Mai",
+            "Cartierul Nord",
+            "Central",
+            "Est",
+            "Libertății",
+            "Ostroveni",
+            "Traian",
+            "Ultracentral",
+            "Vest"
+        ],
+        "Râșnov": [
+            "Central",
+            "Florilor",
+            "Primăverii",
+            "Sud"
+        ],
+        "Rădăuți": [
+            "Sud-Est"
+        ],
+        "Satu Mare": [
+            "Central",
+            "Micro 16",
+            "Semicentral"
+        ],
+        "Sebeș": [
+            "Vest"
+        ],
+        "Sector 1": [
+            "1 Mai",
+            "16 Februarie",
+            "Arcul de Triumf",
+            "Aviatorilor",
+            "Aviației",
+            "Banu Manta",
+            "Beller",
+            "Bucureștii Noi",
+            "Băneasa",
+            "Capitale",
+            "Chibrit",
+            "Chitila",
+            "Clucerului",
+            "Clăbucet",
+            "Domenii",
+            "Dorobanți",
+            "Dămăroaia",
+            "Floreasca",
+            "Gara de Nord",
+            "Grivița",
+            "Herăstrău",
+            "I.C. Brătianu",
+            "Iancu Nicolae",
+            "Jiului",
+            "Kiseleff",
+            "Nord",
+            "Nordului",
+            "P-ta Presei Libere",
+            "P-ța Dorobanți",
+            "Pajura",
+            "Pipera",
+            "Polonă",
+            "Primăverii",
+            "Sisești",
+            "Străulești",
+            "Titulescu",
+            "Turda",
+            "Șoseaua Nordului"
+        ],
+        "Sector 2": [
+            "Andronache",
+            "Armeneasca",
+            "Baicului",
+            "Barbu Văcărescu",
+            "Bucur Obor",
+            "Chișinau",
+            "Colentina",
+            "Dacia",
+            "Doamna Ghica",
+            "Eminescu",
+            "Ferdinand",
+            "Foișorul de Foc",
+            "Fundeni",
+            "Grădina Icoanei",
+            "Iancului",
+            "Lacul Tei",
+            "Lizeanu",
+            "Morarilor",
+            "Moșilor",
+            "Muncii",
+            "Obor",
+            "P-ța Muncii",
+            "Pache Protopopescu",
+            "Pantelimon",
+            "Parcul Circului",
+            "Tei",
+            "Teiul Doamnei",
+            "Vatra Luminoasă",
+            "Ștefan cel Mare"
+        ],
+        "Sector 3": [
+            "1 Decembrie 1918",
+            "23 August (Cațelul)",
+            "Alba Iulia",
+            "Baba Novac",
+            "Balta Albă",
+            "Basarabia",
+            "Calea Călărașilor",
+            "Camil Ressu",
+            "Costin Georgian",
+            "Câmpia Libertății",
+            "Decebal",
+            "Dristor",
+            "Dudești",
+            "Fizicienilor",
+            "Industriilor",
+            "Liviu Rebreanu",
+            "Lucrețiu Pătrășcanu",
+            "Mihai Bravu",
+            "Nerva Traian",
+            "Nicolae Grigorescu",
+            "Octavian Goga",
+            "Ozana",
+            "P-ța Alba Iulia",
+            "P-ța Sfânta Vineri",
+            "P-ța Unirii",
+            "Splaiul Unirii",
+            "Sălăjan",
+            "Theodor Pallady",
+            "Titan",
+            "Unirii",
+            "Vitan",
+            "Vitan Mall",
+            "Vitanul Nou"
+        ],
+        "Sector 4": [
+            "Alexandru Obregia",
+            "Apărătorii Patriei",
+            "Berceni",
+            "Brâncoveanu",
+            "Cantemir",
+            "Eroii Revoluției",
+            "Giurgiului",
+            "Libertății",
+            "Metalurgiei",
+            "Mărășești",
+            "Națiunile Unite",
+            "Olteniței",
+            "P-ța Reșița",
+            "Parcul Carol",
+            "Progresul",
+            "Timpuri Noi",
+            "Tineretului",
+            "Vitan-Bârzești",
+            "Văcăresti",
+            "Șerban Vodă",
+            "Șura Mare"
+        ],
+        "Sector 5": [
+            "13 Septembrie",
+            "Alexandriei",
+            "Antiaeriană",
+            "Cotroceni",
+            "Coșbuc",
+            "Ferentari",
+            "Ghencea",
+            "Măgurele",
+            "Mărgeanului",
+            "Panduri",
+            "Prelungirea Ferentari",
+            "Rahova",
+            "Sebastian",
+            "Splaiul Independenței",
+            "Sălaj",
+            "Trafic Greu",
+            "Tudor Vladimirescu",
+            "Viilor"
+        ],
+        "Sector 6": [
+            "Apusului",
+            "Compozitorilor",
+            "Constructorilor",
+            "Crângași",
+            "Drumul Sării",
+            "Drumul Taberei",
+            "Giulești",
+            "Gorjului",
+            "Grozăvești",
+            "Lacul Morii",
+            "Lujerului",
+            "Militari",
+            "Moinești",
+            "P-ța Gorjului",
+            "Politehnica",
+            "Prelungirea Ghencea",
+            "Păcii",
+            "Regie",
+            "Timișoara",
+            "Uverturii",
+            "Valea Ialomiței",
+            "Valea Oltului",
+            "Veteranilor",
+            "Virtuții"
+        ],
+        "Sfântu Gheorghe": [
+            "Central",
+            "Ciucului",
+            "Gării",
+            "Lenin",
+            "Nord-Est",
+            "Simeria"
+        ],
+        "Sibiu": [
+            "Aeroport",
+            "Arhitecților - Calea Cisnădiei",
+            "Broscărie",
+            "Calea Dumbrăvii",
+            "Cedonia",
+            "Central",
+            "Est",
+            "Exterior Est",
+            "Exterior Sud",
+            "Exterior Vest",
+            "Gușterița",
+            "Hipodrom 1",
+            "Hipodrom 2",
+            "Hipodrom 3",
+            "Hipodrom 4",
+            "Industrial Vest",
+            "Lazaret",
+            "Lupeni",
+            "Mihai Viteazul",
+            "Nord-Vest",
+            "Orașul de Jos",
+            "Periferie",
+            "Piața Cluj",
+            "Sub Arini",
+            "Terezian",
+            "Tilișca",
+            "Tineretului",
+            "Trei Stejari",
+            "Turnișor",
+            "Ultracentral",
+            "Valea Aurie",
+            "Vasile Aaron",
+            "Veterani",
+            "Ștefan cel Mare",
+            "Ștrand",
+            "Țiglari"
+        ],
+        "Sighetu Marmației": [
+            "Ultracentral"
+        ],
+        "Sighișoara": [
+            "Central",
+            "Est"
+        ],
+        "Sinaia": [
+            "1 Mai",
+            "Calea Moroieni",
+            "Furnica",
+            "Moroieni",
+            "Platoul Izvor"
+        ],
+        "Slatina": [
+            "Central",
+            "Steaua",
+            "Zahana"
+        ],
+        "Slobozia": [
+            "Central"
+        ],
+        "Slănic-Moldova": [
+            "Central"
+        ],
+        "Sovata": [
+            "Central"
+        ],
+        "Suceava": [
+            "Burdujeni",
+            "Central",
+            "Exterior Sud",
+            "George Enescu",
+            "Obcini",
+            "Ultracentral",
+            "Universității"
+        ],
+        "Sânnicolau Mare": [
+            "Central"
+        ],
+        "Săcele": [
+            "Bunloc",
+            "Electroprecizia"
+        ],
+        "Tecuci": [
+            "Est",
+            "Exterior Est",
+            "Nord"
+        ],
+        "Timișoara": [
+            "Aeroport",
+            "Aradului",
+            "Blașcovici",
+            "Bogdăneștilor",
+            "Braytim",
+            "Brâncoveanu",
+            "Bucovina",
+            "Buziașului",
+            "Bălcescu",
+            "Calea Urseni",
+            "Central",
+            "Cetății",
+            "Ciarda Roșie",
+            "Circumvalațiunii",
+            "Complex Studențesc",
+            "Crișan",
+            "Dacia",
+            "Dorobanților",
+            "Dâmbovița",
+            "Elisabetin",
+            "Est",
+            "Exterior Nord",
+            "Exterior Sud",
+            "Exterior Vest",
+            "Fabric",
+            "Favorit",
+            "Fratelia",
+            "Freidorf",
+            "Gheorghe Lazăr",
+            "Girocului",
+            "Gării",
+            "Iosefin",
+            "Lipovei",
+            "Lunei",
+            "Medicină",
+            "Mehala",
+            "Nord",
+            "Odobescu",
+            "Olimpia-Stadion",
+            "P-ța Maria",
+            "P-ța Unirii",
+            "P-ța Victoriei",
+            "Plopi",
+            "Plăvăț II",
+            "Punctele Cardinale",
+            "Ronaț",
+            "Semicentral",
+            "Simion Bărnuțiu",
+            "Sinaia",
+            "Soarelui",
+            "Spitalul Județean",
+            "Steaua",
+            "Take Ionescu",
+            "Telegrafului",
+            "Timocului-Șaguna",
+            "Tipografilor",
+            "Torontalului",
+            "UMT",
+            "Ultracentral",
+            "Șagului"
+        ],
+        "Topoloveni": [
+            "Central"
+        ],
+        "Tulcea": [
+            "23 August",
+            "23-Aug",
+            "Babadag",
+            "Big",
+            "C5",
+            "Central",
+            "E3",
+            "Faleză",
+            "Pelican",
+            "Piața Nouă",
+            "Ultracentral",
+            "Vest"
+        ],
+        "Turda": [
+            "Central",
+            "Micro 1"
+        ],
+        "Turnu Măgurele": [
+            "Central"
+        ],
+        "Târgoviște": [
+            "Aleea Trandafirilor",
+            "Central",
+            "Exterior Nord",
+            "Micro 11",
+            "Micro 12",
+            "Micro 2",
+            "Micro 5",
+            "Micro 6",
+            "Micro 9"
+        ],
+        "Târgu Frumos": [
+            "Central"
+        ],
+        "Târgu Jiu": [
+            "9 Mai",
+            "Central",
+            "Est"
+        ],
+        "Târgu Mureș": [
+            "1 Decembrie 1918",
+            "7 Noiembrie",
+            "Aleea Carpați",
+            "Budai",
+            "Central",
+            "Cornișa",
+            "Diamant",
+            "Dâmbu Pietros",
+            "Gara Mare",
+            "Libertății",
+            "Mureșeni",
+            "Rovinari",
+            "Tudor",
+            "Tudor Vladimirescu",
+            "Tudorul Vechi",
+            "Unirii"
+        ],
+        "Târgu Ocna": [
+            "Central"
+        ],
+        "Târgu Secuiesc": [
+            "Sud"
+        ],
+        "Târnăveni": [
+            "Central"
+        ],
+        "Ultracentral": [
+            "Amzei",
+            "Basarab",
+            "Calea Plevnei",
+            "Calea Victoriei",
+            "Central",
+            "Centrul Civic",
+            "Centrul Istoric",
+            "Cișmigiu",
+            "Kogălniceanu",
+            "Magheru",
+            "Matei Voievod",
+            "Mitropolie",
+            "P-ța Amzei",
+            "P-ța Romană",
+            "P-ța Rosetti",
+            "P-ța Sfântul Ștefan",
+            "P-ța Universității",
+            "P-ța Victoriei",
+            "Romană",
+            "Rosetti",
+            "Sala Palatului",
+            "Universitate",
+            "Victoriei",
+            "Știrbei Vodă"
+        ],
+        "Uricani": [
+            "Est"
+        ],
+        "Urlați": [
+            "Central"
+        ],
+        "Vaslui": [
+            "Central"
+        ],
+        "Voluntari": [
+            "Central",
+            "Est",
+            "Exterior Nord",
+            "Exterior Sud",
+            "Exterior Vest",
+            "Nord",
+            "Nord-Est",
+            "Nord-Vest",
+            "Sud-Vest",
+            "Vest"
+        ],
+        "Zalău": [
+            "Central"
+        ],
+        "Țăndărei": [
+            "Central"
+        ]
+    }
+}
