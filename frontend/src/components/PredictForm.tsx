@@ -6,54 +6,72 @@ interface Props {
   loading: boolean;
 }
 
+const defaultForm: PredictRequest = {
+  city: "Alba Iulia",
+  floor: 0,
+  max_floor: 8,
+  neighborhood: "",
+  rooms: 3,
+  surface_m2: 70,
+  year_built: 2018,
+};
+
 export default function PredictForm({ onSubmit, loading }: Props) {
-  const [form, setForm] = useState<PredictRequest>({
-    city: "",
-    floor: 0,
-    max_floor: 8,
-    neighborhood: "",
-    rooms: 3,
-    surface_m2: 70,
-    year_built: 2018,
-  });
+  const [form, setForm] = useState<PredictRequest>(defaultForm);
 
   const handle = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     setForm((prev) => ({ ...prev, [name]: isNaN(Number(value)) ? value : Number(value) }));
   };
 
+  const reset = () => setForm(defaultForm);
+
   return (
-    <div style={{ display: "flex", flexDirection: "column", gap: 12, maxWidth: 400 }}>
-      <label>Oraș
-        <input name="city" type="text" value={form.city} onChange={handle} style={inp} />
-      </label>
-      <label>Cartier
-        <input name="neighborhood" type="text" value={form.neighborhood} onChange={handle} style={inp} />
-      </label>
-      <label>Număr camere
-        <input name="rooms" type="number" value={form.rooms} onChange={handle} style={inp} />
-      </label>
-      <label>Suprafață (mp)
-        <input name="surface_m2" type="number" value={form.surface_m2} onChange={handle} style={inp} />
-      </label>
-      <label>Etaj
-        <input name="floor" type="number" value={form.floor} onChange={handle} style={inp} />
-      </label>
-      <label>Etaj maxim al blocului
-        <input name="max_floor" type="number" value={form.max_floor} onChange={handle} style={inp} />
-      </label>
-      <label>An construcție
-        <input name="year_built" type="number" value={form.year_built} onChange={handle} style={inp} />
-      </label>
-      <button onClick={() => onSubmit(form)} disabled={loading}
-        style={{ padding: "12px", background: "#1565c0", color: "#fff", border: "none", borderRadius: 8, fontSize: 16, cursor: "pointer" }}>
-        {loading ? "Se calculează..." : "Estimează prețul"}
-      </button>
+    <div style={{ display: "flex", flexDirection: "column", gap: 14 }}>
+      {[
+        { label: "Oraș", name: "city", type: "text" },
+        { label: "Cartier", name: "neighborhood", type: "text" },
+        { label: "Număr camere", name: "rooms", type: "number" },
+        { label: "Suprafață (mp)", name: "surface_m2", type: "number" },
+        { label: "Etaj", name: "floor", type: "number" },
+        { label: "Etaj maxim bloc", name: "max_floor", type: "number" },
+        { label: "An construcție", name: "year_built", type: "number" },
+      ].map((f) => (
+        <label key={f.name} style={{ fontSize: 14, fontWeight: 600, color: "#444" }}>
+          {f.label}
+          <input
+            name={f.name}
+            type={f.type}
+            value={(form as any)[f.name]}
+            onChange={handle}
+            style={{
+              display: "block", width: "100%", padding: "9px 12px", marginTop: 4,
+              borderRadius: 7, border: "1px solid #d0d7e3", fontSize: 15, background: "#fafbff"
+            }}
+          />
+        </label>
+      ))}
+
+      {/* Butoane */}
+      <div style={{ display: "flex", gap: 10, marginTop: 6 }}>
+        <button
+          onClick={() => onSubmit(form)}
+          disabled={loading}
+          style={{
+            flex: 2, padding: "12px", background: "#1565c0", color: "#fff",
+            border: "none", borderRadius: 8, fontSize: 15, fontWeight: 700, cursor: "pointer"
+          }}>
+          {loading ? "⏳ Se calculează..." : "🔍 Estimează prețul"}
+        </button>
+        <button
+          onClick={reset}
+          style={{
+            flex: 1, padding: "12px", background: "#f0f2f5", color: "#555",
+            border: "1px solid #d0d7e3", borderRadius: 8, fontSize: 15, fontWeight: 600, cursor: "pointer"
+          }}>
+          🔄 Resetează
+        </button>
+      </div>
     </div>
   );
 }
-
-const inp: React.CSSProperties = {
-  display: "block", width: "100%", padding: 8, marginTop: 4,
-  borderRadius: 6, border: "1px solid #ccc", fontSize: 15,
-};
