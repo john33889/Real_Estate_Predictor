@@ -4,12 +4,12 @@ export default function Navbar() {
   const navigate = useNavigate();
   const location = useLocation();
 
-  const links = [
-    { path: "/", label: "🏠 Acasă" },
-    { path: "/predict", label: "🔍 Estimează" },
-    { path: "/dashboard", label: "📊 Dashboard" },
-  ];
-
+const links = [
+  { path: "/", label: "🏠 Acasă" },
+  { path: "/predict", label: "🔍 Estimează" },
+  { path: "/dashboard", label: "📊 Dashboard" },
+  { path: "/about", label: "👥 Echipă" },
+];
   return (
     <nav style={{
       display: "flex", alignItems: "center", justifyContent: "space-between",
