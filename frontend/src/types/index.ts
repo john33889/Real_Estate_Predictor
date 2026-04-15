@@ -1,16 +1,16 @@
 export interface PredictRequest {
-  suprafata: number;
-  camere: number;
-  oras: string;
-  an_constructie: number;
-  etaj: number;
+  city: string;
+  floor: number;
+  max_floor: number;
+  neighborhood: string;
+  rooms: number;
+  surface_m2: number;
+  year_built: number;
 }
 
 export interface PredictResponse {
-  pret_estimat: number;
-  interval_min: number;
-  interval_max: number;
-  context: string;
+  predicted_price: number;
+  currency: string;
 }
 
 export interface MarketStat {
