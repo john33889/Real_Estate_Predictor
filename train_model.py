@@ -1,13 +1,30 @@
-import pandas as pd
+from pathlib import Path
+import json
 import numpy as np
+import pandas as pd
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import mean_absolute_error, mean_squared_error, r2_score
 from catboost import CatBoostRegressor
+ 
 
-# 1. Load dataset
-df = pd.read_csv("imobiliare_data.csv")
+ROOT_DIR = Path(__file__).resolve().parent
+DATA_PATH = ROOT_DIR / "RealEstate_Scrapper" / "imobiliare_data.csv"
+BACKEND_MODEL_DIR = ROOT_DIR / "backend" / "model"
+MODEL_PATH = BACKEND_MODEL_DIR / "real_estate_catboost_model.cbm"
+METADATA_PATH = BACKEND_MODEL_DIR / "metadata.json"
+METRICS_PATH = BACKEND_MODEL_DIR / "training_metrics.json"
 
-# 2. Keep only relevant columns
+BACKEND_MODEL_DIR.mkdir(parents=True, exist_ok=True)
+
+# =====================================================
+# LOAD DATA
+# =====================================================
+
+if not DATA_PATH.exists():
+    raise FileNotFoundError(f"Dataset not found: {DATA_PATH}")
+
+df = pd.read_csv(DATA_PATH)
+ 
 cols = [
     "price",
     "surface_m2",
@@ -16,57 +33,82 @@ cols = [
     "max_floor",
     "neighborhood",
     "city",
-    "year_built"
+    "year_built",
 ]
 df = df[cols].copy()
 
-# 3. Remove rows without target
-df = df.dropna(subset=["price"])
+# =====================================================
+# CLEANING
+# =====================================================
 
-# 4. Basic cleaning / outlier filtering
+# target
 df["price"] = pd.to_numeric(df["price"], errors="coerce")
-df["surface_m2"] = pd.to_numeric(df["surface_m2"], errors="coerce")
-df["rooms"] = pd.to_numeric(df["rooms"], errors="coerce")
-df["floor"] = pd.to_numeric(df["floor"], errors="coerce")
-df["max_floor"] = pd.to_numeric(df["max_floor"], errors="coerce")
-df["year_built"] = pd.to_numeric(df["year_built"], errors="coerce")
 
+# numeric features
+numeric_cols = ["surface_m2", "rooms", "floor", "max_floor", "year_built"]
+for col in numeric_cols:
+    df[col] = pd.to_numeric(df[col], errors="coerce")
+
+# categorical features
+cat_features = ["neighborhood", "city"]
+for col in cat_features:
+    df[col] = df[col].fillna("Unknown").astype(str).str.strip()
+    df[col] = df[col].replace("", "Unknown")
+
+# remove rows without target
 df = df.dropna(subset=["price"])
 
+# simple outlier filtering
 df = df[df["price"] > 10000]
-df = df[df["surface_m2"] >= 15]
-df = df[df["surface_m2"] <= 500]
-df = df[df["rooms"] >= 1]
-df = df[df["rooms"] <= 10]
+df = df[df["surface_m2"].fillna(0) >= 15]
+df = df[df["surface_m2"].fillna(0) <= 500]
+df = df[df["rooms"].fillna(0) >= 1]
+df = df[df["rooms"].fillna(0) <= 10]
 
 df = df[
     (df["year_built"].isna()) |
     ((df["year_built"] >= 1800) & (df["year_built"] <= 2026))
 ]
 
-# 5. Define categorical and numerical columns
-cat_features = ["neighborhood", "city"]
-num_features = ["surface_m2", "rooms", "floor", "max_floor", "year_built"]
-
-# 6. Fix categorical columns
-for col in cat_features:
-    df[col] = df[col].fillna("Unknown").astype(str)
-
-# 7. Fix numerical columns
-for col in num_features:
-    df[col] = pd.to_numeric(df[col], errors="coerce")
+# fill missing numeric values with median
+for col in numeric_cols:
     df[col] = df[col].fillna(df[col].median())
 
-# 8. Features and target
-X = df.drop(columns=["price"])
-y = df["price"]
+# final safety
+df = df.dropna(subset=["price"])
 
-# 9. Split data
+# =====================================================
+# FEATURES / TARGET
+# =====================================================
+
+FEATURE_COLUMNS = [
+    "surface_m2",
+    "rooms",
+    "floor",
+    "max_floor",
+    "neighborhood",
+    "city",
+    "year_built",
+]
+
+X = df[FEATURE_COLUMNS].copy()
+y = df["price"].copy()
+
+# =====================================================
+# TRAIN / TEST SPLIT
+# =====================================================
+
 X_train, X_test, y_train, y_test = train_test_split(
-    X, y, test_size=0.2, random_state=42
+    X,
+    y,
+    test_size=0.2,
+    random_state=42
 )
 
-# 10. Build model
+# =====================================================
+# MODEL
+# =====================================================
+
 model = CatBoostRegressor(
     iterations=1000,
     learning_rate=0.05,
@@ -76,7 +118,6 @@ model = CatBoostRegressor(
     verbose=100
 )
 
-# 11. Train model
 model.fit(
     X_train,
     y_train,
@@ -85,33 +126,114 @@ model.fit(
     use_best_model=True
 )
 
-# 12. Predict
+# =====================================================
+# EVALUATION
+# =====================================================
+
 preds = model.predict(X_test)
 
-# 13. Metrics
-mae = mean_absolute_error(y_test, preds)
-rmse = np.sqrt(mean_squared_error(y_test, preds))
-r2 = r2_score(y_test, preds)
+mae = float(mean_absolute_error(y_test, preds))
+rmse = float(np.sqrt(mean_squared_error(y_test, preds)))
+r2 = float(r2_score(y_test, preds))
 
+import json
+from pathlib import Path
+
+# make sure backend/model exists
+metrics_dir = Path("backend/model")
+metrics_dir.mkdir(parents=True, exist_ok=True)
+
+best_scores = model.get_best_score()
+best_iteration = model.get_best_iteration()
+
+training_stats = {
+    "rows_used": int(len(df)),
+    "features": FEATURE_COLUMNS,
+    "categorical_features": cat_features,
+    "mae": mae,
+    "rmse": rmse,
+    "r2": r2,
+    "best_iteration": int(best_iteration),
+    "best_test_mae": float(best_scores["validation"]["MAE"]),
+    "train_final_rmse": float(best_scores["learn"]["RMSE"]),
+    "validation_final_mae": float(best_scores["validation"]["MAE"])
+}
+
+with open(metrics_dir / "training_metrics.json", "w", encoding="utf-8") as f:
+    json.dump(training_stats, f, ensure_ascii=False, indent=4)
+
+print("Training metrics saved to backend/model/training_metrics.json")
 print("\n===== RESULTS =====")
+print("Rows used:", len(df))
 print("MAE:", mae)
 print("RMSE:", rmse)
 print("R2:", r2)
 
-# 14. Example prediction
+# =====================================================
+# SAVE MODEL
+# =====================================================
+
+model.save_model(str(MODEL_PATH))
+print(f"\nModel saved as: {MODEL_PATH}")
+
+# =====================================================
+# SAVE METADATA
+# =====================================================
+
+cities = sorted(df["city"].dropna().astype(str).unique().tolist())
+
+city_neighborhoods = {}
+for city in cities:
+    neighborhoods = (
+        df.loc[df["city"] == city, "neighborhood"]
+        .dropna()
+        .astype(str)
+        .unique()
+        .tolist()
+    )
+    city_neighborhoods[city] = sorted(neighborhoods)
+
+metadata = {
+    "cities": cities,
+    "city_neighborhoods": city_neighborhoods,
+}
+
+with open(METADATA_PATH, "w", encoding="utf-8") as f:
+    json.dump(metadata, f, ensure_ascii=False, indent=4)
+
+print(f"Metadata saved as: {METADATA_PATH}")
+
+# =====================================================
+# SAVE TRAINING METRICS
+# =====================================================
+
+metrics = {
+    "rows_used": len(df),
+    "features": FEATURE_COLUMNS,
+    "categorical_features": cat_features,
+    "mae": mae,
+    "rmse": rmse,
+    "r2": r2,
+}
+
+with open(METRICS_PATH, "w", encoding="utf-8") as f:
+    json.dump(metrics, f, ensure_ascii=False, indent=4)
+
+print(f"Training metrics saved as: {METRICS_PATH}")
+
+# =====================================================
+# EXAMPLE PREDICTION
+# =====================================================
+
 example = pd.DataFrame([{
     "surface_m2": 70,
     "rooms": 3,
     "floor": 4,
     "max_floor": 8,
     "neighborhood": "Unknown",
-    "city": "Bucuresti",
+    "city": "București",
     "year_built": 2018
 }])
 
-pred_price = model.predict(example)[0]
-print("\nPredicted price for example property:", pred_price)
-
-# 15. Save model
-model.save_model("real_estate_catboost_model.cbm")
-print("\nModel saved as: real_estate_catboost_model.cbm")
+pred_price = float(model.predict(example)[0])
+print("\nExample prediction:", round(pred_price, 2), "EUR")

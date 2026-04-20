@@ -1,8 +1,8 @@
 fastapi==0.115.6
 uvicorn[standard]==0.34.0
-catboost==1.2.7
-pandas==2.2.3
-numpy==1.26.4
-scikit-learn==1.6.1
+catboost==1.2.9
+pandas==2.3.3
+numpy==2.3.4
+scikit-learn==1.7.2
 python-dotenv==1.0.1
 pydantic==2.10.4
