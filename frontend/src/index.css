@@ -2,35 +2,141 @@
 
 body {
   font-family: "Segoe UI", Arial, sans-serif;
-  background: #f0f2f5;
-  color: #1a1a2e;
   min-height: 100vh;
+  background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+  background-attachment: fixed;
+  color: #fff;
 }
 
-h1 { font-size: 2rem; font-weight: 700; }
-h2 { font-size: 1.5rem; font-weight: 600; }
-h3 { font-size: 1.1rem; font-weight: 600; }
+/* Bubble-uri animate în fundal */
+body::before, body::after {
+  content: "";
+  position: fixed;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.25;
+  pointer-events: none;
+  z-index: 0;
+  animation: float 12s ease-in-out infinite alternate;
+}
+body::before {
+  width: 600px; height: 600px;
+  background: radial-gradient(circle, #4fc3f7, #1565c0);
+  top: -100px; left: -100px;
+}
+body::after {
+  width: 500px; height: 500px;
+  background: radial-gradient(circle, #ce93d8, #6a1b9a);
+  bottom: -100px; right: -100px;
+  animation-delay: -6s;
+}
 
-button {
+@keyframes float {
+  0% { transform: translate(0, 0) scale(1); }
+  100% { transform: translate(40px, 40px) scale(1.1); }
+}
+
+/* Glass card */
+.card {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 20px;
+  padding: 28px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  position: relative;
+  z-index: 1;
+}
+
+.card-blue {
+  background: rgba(21, 101, 192, 0.25);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(79, 195, 247, 0.3);
+  border-radius: 20px;
+  padding: 28px;
+  box-shadow: 0 8px 32px rgba(21, 101, 192, 0.2);
+  position: relative;
+  z-index: 1;
+}
+
+/* Butoane */
+.btn-primary {
+  padding: 12px 28px;
+  background: rgba(255,255,255,0.15);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,0.3);
+  color: #fff;
+  border-radius: 12px;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
   transition: all 0.2s ease;
   font-family: inherit;
 }
-button:hover { transform: translateY(-1px); box-shadow: 0 4px 16px rgba(0,0,0,0.15); }
-button:active { transform: translateY(0); }
+.btn-primary:hover {
+  background: rgba(255,255,255,0.25);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+}
 
+.btn-white {
+  padding: 12px 28px;
+  background: #fff;
+  border: none;
+  color: #1565c0;
+  border-radius: 12px;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: inherit;
+}
+.btn-white:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(255,255,255,0.3);
+}
+
+.btn-back {
+  padding: 8px 16px;
+  background: rgba(255,255,255,0.08);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,0.2);
+  color: rgba(255,255,255,0.8);
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: inherit;
+  margin-bottom: 24px;
+}
+.btn-back:hover {
+  background: rgba(255,255,255,0.15);
+}
+
+/* Input-uri */
 input, select {
   font-family: inherit;
-  transition: border 0.2s;
+  background: rgba(255,255,255,0.08) !important;
+  border: 1px solid rgba(255,255,255,0.2) !important;
+  color: #fff !important;
+  border-radius: 10px !important;
+  padding: 10px 14px !important;
+  font-size: 15px !important;
+  width: 100%;
+  transition: all 0.2s;
 }
 input:focus, select:focus {
-  outline: none;
-  border-color: #1565c0 !important;
-  box-shadow: 0 0 0 3px rgba(21,101,192,0.1);
+  outline: none !important;
+  border-color: rgba(79, 195, 247, 0.6) !important;
+  box-shadow: 0 0 0 3px rgba(79, 195, 247, 0.15) !important;
+  background: rgba(255,255,255,0.12) !important;
 }
+input::placeholder { color: rgba(255,255,255,0.4) !important; }
 
-.card {
-  background: #fff;
-  border-radius: 12px;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.07);
-  padding: 28px;
-}
+label { color: rgba(255,255,255,0.85) !important; font-size: 14px; font-weight: 600; }
+
+h1, h2, h3 { color: #fff; }
+p { color: rgba(255,255,255,0.75); }

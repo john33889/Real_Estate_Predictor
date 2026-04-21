@@ -37,7 +37,7 @@ export default function PredictForm({ onSubmit, loading }: Props) {
         { label: "Etaj maxim bloc", name: "max_floor", type: "number" },
         { label: "An construcție", name: "year_built", type: "number" },
       ].map((f) => (
-        <label key={f.name} style={{ fontSize: 14, fontWeight: 600, color: "#444" }}>
+        <label key={f.name} style={{ fontSize: 14, fontWeight: 600, color: "#fff" }}>
           {f.label}
           <input
             name={f.name}

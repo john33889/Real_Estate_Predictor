@@ -13,7 +13,7 @@ export default function AboutPage() {
   return (
     <div style={{ maxWidth: 900, margin: "0 auto", padding: "40px 24px" }}>
       <button onClick={() => navigate("/")} style={{
-        marginBottom: 24, background: "none", border: "1px solid #d0d7e3",
+        marginBottom: 24, background: "none", border: "1px solid white",
         borderRadius: 8, padding: "8px 16px", cursor: "pointer", color: "#555",
         fontSize: 14, fontWeight: 600
       }}>
@@ -21,19 +21,19 @@ export default function AboutPage() {
       </button>
 
       <h1 style={{ color: "#1565c0", marginBottom: 8 }}>👥 Despre echipă</h1>
-      <p style={{ color: "#666", marginBottom: 40 }}>
-        Proiect software în echipă · MI204 · 4 membri, 4 module independente.
+      <p style={{ color: "white", marginBottom: 40 }}>
+        Proiect software în echipă 
       </p>
 
       <div style={{ display: "flex", gap: 24, flexWrap: "wrap", marginBottom: 48 }}>
         {members.map((m) => (
           <div key={m.rol} className="card" style={{ flex: "1 1 360px", display: "flex", gap: 16, alignItems: "flex-start" }}>
-            <div style={{ fontSize: 36, background: "#f0f7ff", borderRadius: 12, padding: "12px 14px" }}>{m.icon}</div>
+            <div style={{ fontSize: 36, background: "white", borderRadius: 12, padding: "12px 14px" }}>{m.icon}</div>
             <div>
               <p style={{ fontSize: 12, color: "#1565c0", fontWeight: 700, letterSpacing: 1, marginBottom: 2 }}>{m.rol}</p>
-              <h3 style={{ marginBottom: 4, color: "#1a1a2e" }}>{m.nume}</h3>
-              <p style={{ fontSize: 13, color: "#888", marginBottom: 6 }}>Modul: {m.modul}</p>
-              <p style={{ fontSize: 14, color: "#555", lineHeight: 1.6 }}>{m.desc}</p>
+              <h3 style={{ marginBottom: 4, color: "white" }}>{m.nume}</h3>
+              <p style={{ fontSize: 13, color: "white", marginBottom: 6 }}>Modul: {m.modul}</p>
+              <p style={{ fontSize: 14, color: "white", lineHeight: 1.6 }}>{m.desc}</p>
             </div>
           </div>
         ))}
@@ -42,7 +42,7 @@ export default function AboutPage() {
       <div className="card" style={{ background: "linear-gradient(135deg, #1565c0, #0d47a1)", color: "#fff", textAlign: "center" }}>
         <h2 style={{ marginBottom: 8 }}>🏆 Obiectivul proiectului</h2>
         <p style={{ opacity: 0.85, lineHeight: 1.8, maxWidth: 600, margin: "0 auto" }}>
-          Estimarea prețului corect de piață pentru locuințe din România prin colectare automată de anunțuri, analiză AI și o aplicație web ușor de folosit.
+          Estimarea prețului corect de piață pentru locuințe din România prin colectare automată de anunțuri. 
         </p>
       </div>
     </div>

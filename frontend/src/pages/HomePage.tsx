@@ -4,56 +4,66 @@ export default function HomePage() {
   const navigate = useNavigate();
 
   return (
-    <div style={{ minHeight: "calc(100vh - 60px)", fontFamily: "Segoe UI, sans-serif" }}>
+    <div style={{ minHeight: "calc(100vh - 64px)", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", padding: "60px 24px", position: "relative", zIndex: 1 }}>
 
-      {/* Hero Section */}
+      {/* Badge */}
       <div style={{
-        background: "linear-gradient(135deg, #1565c0 0%, #0d47a1 60%, #1a237e 100%)",
-        color: "#fff", padding: "100px 40px", textAlign: "center"
+        display: "inline-block", marginBottom: 24,
+        background: "rgba(255,255,255,0.1)", backdropFilter: "blur(10px)",
+        border: "1px solid rgba(255,255,255,0.2)", borderRadius: 20,
+        padding: "6px 20px", fontSize: 12, fontWeight: 700, letterSpacing: 2, color: "rgba(255,255,255,0.9)"
       }}>
-        <div style={{ maxWidth: 700, margin: "0 auto" }}>
-          <div style={{ display: "inline-block", background: "rgba(255,255,255,0.15)", borderRadius: 20, padding: "6px 18px", fontSize: 13, marginBottom: 20, letterSpacing: 1 }}>
-            PROIECT SOFTWARE · MI204
-          </div>
-          <h1 style={{ fontSize: "3rem", fontWeight: 800, marginBottom: 16, lineHeight: 1.2 }}>
-            RealEstate Predictor AI
-          </h1>
-          <p style={{ fontSize: "1.2rem", opacity: 0.85, marginBottom: 36, lineHeight: 1.7 }}>
-            Estimează prețul corect de piață pentru orice locuință din România — bazat pe date reale și machine learning.
-          </p>
-          <div style={{ display: "flex", gap: 16, justifyContent: "center", flexWrap: "wrap" }}>
-            <button onClick={() => navigate("/predict")} style={{
-              padding: "14px 36px", fontSize: 16, fontWeight: 700,
-              background: "#fff", color: "#1565c0", border: "none",
-              borderRadius: 10, cursor: "pointer", boxShadow: "0 4px 20px rgba(0,0,0,0.2)"
-            }}>
-              🔍 Estimează prețul
-            </button>
-            <button onClick={() => navigate("/dashboard")} style={{
-              padding: "14px 36px", fontSize: 16, fontWeight: 700,
-              background: "transparent", color: "#fff",
-              border: "2px solid rgba(255,255,255,0.6)",
-              borderRadius: 10, cursor: "pointer"
-            }}>
-              📊 Dashboard piață
-            </button>
-          </div>
-        </div>
+        PROIECT SOFTWARE · MI204
       </div>
 
-      {/* CTA Footer */}
-      <div style={{ background: "#fff", padding: "64px 24px", textAlign: "center", borderTop: "1px solid #e3e8f0" }}>
-        <h2 style={{ marginBottom: 12, color: "#1a1a2e" }}>Gata să estimezi?</h2>
-        <p style={{ color: "#888", marginBottom: 24 }}>Încearcă acum — fără înregistrare</p>
-        <button onClick={() => navigate("/predict")} style={{
-          padding: "14px 40px", fontSize: 16, fontWeight: 700,
-          background: "#1565c0", color: "#fff", border: "none",
-          borderRadius: 10, cursor: "pointer"
-        }}>
-          Începe estimarea →
+      {/* Title */}
+      <h1 style={{ fontSize: "3.5rem", fontWeight: 900, textAlign: "center", marginBottom: 16, lineHeight: 1.15,
+        background: "linear-gradient(135deg, #fff 30%, #90caf9 100%)",
+        WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent"
+      }}>
+        RealEstate<br />Predictor AI
+      </h1>
+
+      <p style={{ fontSize: "1.15rem", textAlign: "center", maxWidth: 520, marginBottom: 40, lineHeight: 1.8, color: "rgba(255,255,255,0.7)" }}>
+        Estimează prețul corect de piață pentru orice locuință din România — bazat pe date reale și machine learning.
+      </p>
+
+      {/* Butoane */}
+      <div style={{ display: "flex", gap: 14, flexWrap: "wrap", justifyContent: "center", marginBottom: 64 }}>
+        <button className="btn-white" onClick={() => navigate("/predict")}>
+          🔍 Estimează prețul
+        </button>
+        <button className="btn-primary" onClick={() => navigate("/dashboard")}>
+          📊 Dashboard piață
+        </button>
+        <button className="btn-primary" onClick={() => navigate("/about")}>
+          👥 Despre echipă
         </button>
       </div>
 
+      {/* Glass cards info */}
+      <div style={{ display: "flex", gap: 20, flexWrap: "wrap", justifyContent: "center", maxWidth: 900 }}>
+        {[
+          { icon: "🤖", title: "AI & ML", desc: "Model CatBoost antrenat pe mii de anunțuri reale din România" },
+          { icon: "⚡", title: "Rapid", desc: "Estimare instantanee bazată pe date actualizate de piață" },
+          { icon: "📍", title: "Localizat", desc: "Date specifice per oraș, cartier și tip de proprietate" },
+        ].map((c) => (
+          <div key={c.title} className="card" style={{ flex: "1 1 220px", textAlign: "center", padding: "28px 20px" }}>
+            <div style={{ fontSize: 36, marginBottom: 12 }}>{c.icon}</div>
+            <h3 style={{ marginBottom: 8, fontSize: "1rem" }}>{c.title}</h3>
+            <p style={{ fontSize: 13, lineHeight: 1.7 }}>{c.desc}</p>
+          </div>
+        ))}
+      </div>
+
+      {/* CTA */}
+      <div className="card-blue" style={{ marginTop: 48, textAlign: "center", maxWidth: 500, padding: "36px 40px" }}>
+        <h2 style={{ marginBottom: 8, fontSize: "1.4rem" }}>Gata să estimezi?</h2>
+        <p style={{ marginBottom: 20, fontSize: 14 }}>Încearcă acum — fără înregistrare</p>
+        <button className="btn-white" onClick={() => navigate("/predict")}>
+          Începe estimarea →
+        </button>
+      </div>
     </div>
   );
 }
