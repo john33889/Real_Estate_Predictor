@@ -427,7 +427,27 @@ def scrape_imobiliare(driver, pages):
 import os
 
 
+def clean_existing_file():
+    if not os.path.exists(OUTPUT_FILE):
+        return
+
+    df_old = pd.read_csv(OUTPUT_FILE)
+
+    print("\nCleaning existing CSV...")
+    print("Rows before cleaning:", len(df_old))
+
+    # remove duplicates only when url AND price are the same
+    df_old = df_old.drop_duplicates(subset=["url", "price"], keep="first")
+
+    df_old.to_csv(OUTPUT_FILE, index=False, encoding="utf-8-sig")
+
+    print("Rows after cleaning:", len(df_old))
+
+
 def main():
+    # first clean old file
+    clean_existing_file()
+
     driver = build_driver()
 
     try:
@@ -435,35 +455,34 @@ def main():
     finally:
         driver.quit()
 
-    df = pd.DataFrame(imobiliare_data, columns=COLUMNS)
+    df_new = pd.DataFrame(imobiliare_data, columns=COLUMNS)
 
-    print("\nRows scraped this run:", len(df))
+    print("\nRows scraped this run:", len(df_new))
 
-    # remove duplicates only inside this run
-    df = df.drop_duplicates(subset=["url"])
+    # remove duplicates inside current run only if url AND price are same
+    df_new = df_new.drop_duplicates(subset=["url", "price"], keep="first")
 
-    print("Rows after removing duplicates in this run:", len(df))
+    print("Rows after removing same-run duplicates:", len(df_new))
 
-    file_exists = os.path.exists(OUTPUT_FILE)
+    if os.path.exists(OUTPUT_FILE):
+        df_old = pd.read_csv(OUTPUT_FILE)
 
-    if file_exists:
-        df.to_csv(
-            OUTPUT_FILE,
-            mode="a",
-            header=False,
-            index=False,
-            encoding="utf-8-sig"
-        )
-        print("Appended to existing file")
+        combined = pd.concat([df_old, df_new], ignore_index=True)
+
+        print("\nRows before final dedup:", len(combined))
+
+        # keep same URL with different price
+        # remove only rows where URL and price are both identical
+        combined = combined.drop_duplicates(subset=["url", "price"], keep="first")
+
+        print("Rows after final dedup:", len(combined))
+
+        combined.to_csv(OUTPUT_FILE, index=False, encoding="utf-8-sig")
+
+        print("Updated existing file")
 
     else:
-        df.to_csv(
-            OUTPUT_FILE,
-            mode="w",
-            header=True,
-            index=False,
-            encoding="utf-8-sig"
-        )
+        df_new.to_csv(OUTPUT_FILE, index=False, encoding="utf-8-sig")
         print("Created new file")
 
     print("Saved to:", OUTPUT_FILE)
