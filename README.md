@@ -215,7 +215,7 @@ Toate modificările trec printr-un pull request astfel încât cel puțin un alt
 
 ## Setul de date
 
-Setul de date conține aproximativ **50.000 de anunțuri rezidențiale** colectate de pe imobiliare.ro în martie 2026. Fiecare înregistrare include prețul anunțului (EUR), suprafața (m²), numărul de camere, etajul și numărul total de etaje, cartierul, orașul, anul construcției și URL-ul original al anunțului. După curățare, rămân aproximativ 45.000 de înregistrări pentru antrenare și evaluare.
+Setul de date conține aproximativ **26.000 de anunțuri rezidențiale** colectate de pe imobiliare.ro în martie 2026. Fiecare înregistrare include prețul anunțului (EUR), suprafața (m²), numărul de camere, etajul și numărul total de etaje, cartierul, orașul, anul construcției și URL-ul original al anunțului. După curățare, rămân aproximativ 45.000 de înregistrări pentru antrenare și evaluare.
 
 Datele acoperă **133 de orașe din România** și peste **875 de cartiere distincte**, ceea ce face din oraș și cartier unele dintre cele mai informative variabile din model.
 
