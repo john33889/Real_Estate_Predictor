@@ -209,7 +209,7 @@ Proiectul urmează un model de ramificare câte un branch per modul. Fiecare mem
 | `Scrapper` | Adi | Scraper și pipeline de date |
 | `re-train` | Radu | Experimente și reantrenare model |
 
-Push-urile directe pe `main` sunt descurajate. Toate modificările trec printr-un pull request astfel încât cel puțin un alt membru al echipei să aibă vizibilitate înainte de merge.
+Toate modificările trec printr-un pull request astfel încât cel puțin un alt membru al echipei să aibă vizibilitate înainte de a face merge.
 
 ---
 
