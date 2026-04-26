@@ -106,31 +106,31 @@ La pornire, odată cu modelul, aplicația încarcă întregul set de date CSV î
 
 ## Pornirea aplicației
 
-### Cerințe prealabile
+### Cerințe minime
 
 - Python 3.11 sau mai nou
 - Node.js 18 sau mai nou și npm
 - Git
 
-### Clonează repository-ul
+### Clonare repo
 
 ```bash
 git clone https://github.com/john33889/Real_Estate_Predictor.git
 cd Real_Estate_Predictor
 ```
 
-### Antrenează modelul
+### Antrenarea modelului
 
-Artefactul `.cbm` al modelului nu este inclus în controlul versiunilor din cauza dimensiunii sale. Rulează scriptul de antrenare o singură dată pentru a-l genera:
+Fișierul `.cbm` al modelului nu este inclus în controlul versiunilor din cauza dimensiunii sale. Rulează scriptul de antrenare o singură dată pentru a-l genera:
 
 ```bash
 python train_model.py
 mv real_estate_catboost_model.cbm backend/model/
 ```
 
-Antrenarea durează câteva minute pe un laptop obișnuit. La final, scriptul afișează MAE, RMSE și R² pe setul de test.
+Antrenarea poate dura câteva minute.
 
-### Pornește backend-ul
+### Backend
 
 ```bash
 cd backend
@@ -141,7 +141,7 @@ python -m uvicorn app.main:app --reload --host 0.0.0.0 --port 8080
 
 API-ul va fi disponibil la `http://localhost:8080`. Documentația interactivă se găsește la `http://localhost:8080/docs`.
 
-### Pornește frontend-ul
+### Frontend
 
 Într-un terminal separat:
 
@@ -215,13 +215,13 @@ Toate modificările trec printr-un pull request astfel încât cel puțin un alt
 
 ## Setul de date
 
-Setul de date conține aproximativ **50.000 de anunțuri rezidențiale** colectate de pe imobiliare.ro în martie 2026. Fiecare înregistrare include prețul anunțului (EUR), suprafața (m²), numărul de camere, etajul și numărul total de etaje, cartierul, orașul, anul construcției și URL-ul original al anunțului. După curățare — eliminarea anunțurilor cu prețuri sub 10.000 €, a proprietăților în afara intervalului 15–500 m² și a înregistrărilor cu numere invalide de camere — rămân aproximativ 45.000 de înregistrări pentru antrenare și evaluare.
+Setul de date conține aproximativ **50.000 de anunțuri rezidențiale** colectate de pe imobiliare.ro în martie 2026. Fiecare înregistrare include prețul anunțului (EUR), suprafața (m²), numărul de camere, etajul și numărul total de etaje, cartierul, orașul, anul construcției și URL-ul original al anunțului. După curățare, rămân aproximativ 45.000 de înregistrări pentru antrenare și evaluare.
 
 Datele acoperă **133 de orașe din România** și peste **875 de cartiere distincte**, ceea ce face din oraș și cartier unele dintre cele mai informative variabile din model.
 
 ---
 
-## Echipa
+## Echipă - Contributors
 
 | Membru | Rol |
 |--------|-----|
