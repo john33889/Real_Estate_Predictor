@@ -1,15 +1,23 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import PredictForm from "../components/PredictForm";
 import PredictResult from "../components/PredictResult";
+import SimilarProperties from "../components/SimilarProperties";
 import { predictPrice } from "../api/api";
+import { loadCsvData, findSimilarProperties, type RealEstateRow } from "../utils/csvData";
 import type { PredictRequest, PredictResponse } from "../types";
 
 export default function PredictPage() {
   const navigate = useNavigate();
   const [result, setResult] = useState<PredictResponse | null>(null);
+  const [similar, setSimilar] = useState<RealEstateRow[]>([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
+  const [csvData, setCsvData] = useState<RealEstateRow[]>([]);
+
+  useEffect(() => {
+    loadCsvData().then(setCsvData).catch(console.error);
+  }, []);
 
   const handleSubmit = async (data: PredictRequest) => {
     setLoading(true);
@@ -17,6 +25,15 @@ export default function PredictPage() {
     try {
       const res = await predictPrice(data);
       setResult(res.data);
+
+      // caută anunțuri similare în CSV
+      const matches = findSimilarProperties(csvData, {
+        city: data.city,
+        neighborhood: data.neighborhood,
+        rooms: data.rooms,
+        surface_m2: data.surface_m2,
+      }, 4);
+      setSimilar(matches);
     } catch {
       setError("Eroare la conectarea cu serverul.");
     } finally {
@@ -31,7 +48,7 @@ export default function PredictPage() {
       <div style={{ marginBottom: 32 }}>
         <h1 style={{ color: "#fff", marginBottom: 8 }}>🔍 Estimează prețul locuinței</h1>
         <p style={{ color: "rgba(255,255,255,0.7)" }}>
-          Completează detaliile locuinței și obții o estimare bazată pe date reale de piață.
+          Completează detaliile și obții estimarea AI plus anunțuri reale similare din baza de date.
         </p>
       </div>
 
@@ -49,7 +66,7 @@ export default function PredictPage() {
           )}
         </div>
 
-        {/* Dreapta: rezultat */}
+        {/* Dreapta: rezultat + recomandări */}
         <div style={{ flex: "1 1 380px", display: "flex", flexDirection: "column", gap: 20 }}>
           {loading && (
             <div className="card" style={{ textAlign: "center", padding: 48 }}>
@@ -66,13 +83,7 @@ export default function PredictPage() {
             </div>
           )}
           {result && <PredictResult result={result} />}
-
-          <div className="card-blue" style={{ padding: 24 }}>
-            <h3 style={{ color: "#fff", marginBottom: 10 }}>ℹ️ Cum funcționează?</h3>
-            <p style={{ fontSize: 14, color: "rgba(255,255,255,0.7)", lineHeight: 1.8 }}>
-              Modelul AI a fost antrenat pe mii de anunțuri reale din România. Estimarea ia în calcul suprafața, etajul, cartierul, anul construcției și prețurile curente de piață.
-            </p>
-          </div>
+          {result && !loading && <SimilarProperties properties={similar} />}
         </div>
       </div>
     </div>

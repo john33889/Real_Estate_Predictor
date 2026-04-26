@@ -6,69 +6,86 @@ interface Props {
   loading: boolean;
 }
 
-const defaultForm: PredictRequest = {
-  city: "Alba Iulia",
-  floor: 0,
-  max_floor: 8,
+interface FormState {
+  city: string;
+  neighborhood: string;
+  rooms: string;
+  surface_m2: string;
+  floor: string;
+  max_floor: string;
+  year_built: string;
+}
+
+const emptyForm: FormState = {
+  city: "",
   neighborhood: "",
-  rooms: 3,
-  surface_m2: 70,
-  year_built: 2018,
+  rooms: "",
+  surface_m2: "",
+  floor: "",
+  max_floor: "",
+  year_built: "",
 };
 
 export default function PredictForm({ onSubmit, loading }: Props) {
-  const [form, setForm] = useState<PredictRequest>(defaultForm);
+  const [form, setForm] = useState<FormState>(emptyForm);
 
   const handle = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
-    setForm((prev) => ({ ...prev, [name]: isNaN(Number(value)) ? value : Number(value) }));
+    setForm((prev) => ({ ...prev, [name]: value }));
   };
 
-  const reset = () => setForm(defaultForm);
+  const reset = () => setForm(emptyForm);
+
+  const submit = () => {
+    const data: PredictRequest = {
+      city: form.city,
+      neighborhood: form.neighborhood,
+      rooms: Number(form.rooms) || 0,
+      surface_m2: Number(form.surface_m2) || 0,
+      floor: Number(form.floor) || 0,
+      max_floor: Number(form.max_floor) || 0,
+      year_built: Number(form.year_built) || 0,
+    };
+    onSubmit(data);
+  };
 
   return (
     <div style={{ display: "flex", flexDirection: "column", gap: 14 }}>
       {[
-        { label: "Oraș", name: "city", type: "text" },
-        { label: "Cartier", name: "neighborhood", type: "text" },
-        { label: "Număr camere", name: "rooms", type: "number" },
-        { label: "Suprafață (mp)", name: "surface_m2", type: "number" },
-        { label: "Etaj", name: "floor", type: "number" },
-        { label: "Etaj maxim bloc", name: "max_floor", type: "number" },
-        { label: "An construcție", name: "year_built", type: "number" },
+        { label: "Oraș", name: "city", type: "text", placeholder: "ex: București" },
+        { label: "Cartier", name: "neighborhood", type: "text", placeholder: "ex: Pipera" },
+        { label: "Număr camere", name: "rooms", type: "number", placeholder: "ex: 3" },
+        { label: "Suprafață (mp)", name: "surface_m2", type: "number", placeholder: "ex: 70" },
+        { label: "Etaj", name: "floor", type: "number", placeholder: "ex: 2" },
+        { label: "Etaj maxim bloc", name: "max_floor", type: "number", placeholder: "ex: 8" },
+        { label: "An construcție", name: "year_built", type: "number", placeholder: "ex: 2020" },
       ].map((f) => (
-        <label key={f.name} style={{ fontSize: 14, fontWeight: 600, color: "#fff" }}>
+        <label key={f.name} style={{ fontSize: 13, fontWeight: 600, color: "#fff" }}>
           {f.label}
           <input
             name={f.name}
             type={f.type}
             value={(form as any)[f.name]}
             onChange={handle}
-            style={{
-              display: "block", width: "100%", padding: "9px 12px", marginTop: 4,
-              borderRadius: 7, border: "1px solid #d0d7e3", fontSize: 15, background: "#fafbff"
-            }}
+            placeholder={f.placeholder}
           />
         </label>
       ))}
 
-      {/* Butoane */}
       <div style={{ display: "flex", gap: 10, marginTop: 6 }}>
         <button
-          onClick={() => onSubmit(form)}
+          onClick={submit}
           disabled={loading}
-          style={{
-            flex: 2, padding: "12px", background: "#1565c0", color: "#fff",
-            border: "none", borderRadius: 8, fontSize: 15, fontWeight: 700, cursor: "pointer"
-          }}>
+          className="btn-white"
+          style={{ flex: 2 }}
+        >
           {loading ? "⏳ Se calculează..." : "🔍 Estimează prețul"}
         </button>
         <button
           onClick={reset}
-          style={{
-            flex: 1, padding: "12px", background: "#f0f2f5", color: "#555",
-            border: "1px solid #d0d7e3", borderRadius: 8, fontSize: 15, fontWeight: 600, cursor: "pointer"
-          }}>
+          className="btn-primary"
+          style={{ flex: 1 }}
+        >
           🔄 Resetează
         </button>
       </div>
