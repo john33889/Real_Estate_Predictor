@@ -1,0 +1,19 @@
+{
+    "rows_used": 107628,
+    "features": [
+        "surface_m2",
+        "rooms",
+        "floor",
+        "max_floor",
+        "neighborhood",
+        "city",
+        "year_built"
+    ],
+    "categorical_features": [
+        "neighborhood",
+        "city"
+    ],
+    "mae": 18393.567043909163,
+    "rmse": 31173.893104516654,
+    "r2": 0.9606280307884121
+}

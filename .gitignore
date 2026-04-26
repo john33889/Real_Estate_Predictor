@@ -1,4 +1,7 @@
-
-imobiliare_data.csv
-*.cbm
-rep_env/
+.idea/inspectionProfiles/profiles_settings.xml
+.idea/misc.xml
+.idea/modules.xml
+.idea/Real_Estate_Predictor.iml
+.idea/vcs.xml
+.idea/workspace.xml
+RealEstate/.idea/workspace.xml
