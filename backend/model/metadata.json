@@ -39,6 +39,7 @@
         "Călărași",
         "Dej",
         "Deva",
+        "Dorohoi",
         "Drobeta-Turnu Severin",
         "Drăgășani",
         "Dărmănești",
@@ -65,10 +66,12 @@
         "Mangalia",
         "Medgidia",
         "Miercurea-Ciuc",
+        "Mioveni",
         "Mizil",
         "Măgurele",
         "Mărășești",
         "Nehoiu",
+        "Neptun",
         "Năvodari",
         "Odobești",
         "Olimp",
@@ -118,6 +121,7 @@
         "Săcele",
         "Tecuci",
         "Timișoara",
+        "Titu",
         "Topoloveni",
         "Tulcea",
         "Turda",
@@ -201,6 +205,7 @@
             "Republicii",
             "Sud",
             "Săsar",
+            "Ultracentral",
             "Valea Borcutului",
             "Vest"
         ],
@@ -285,6 +290,7 @@
             "Central"
         ],
         "Brăila": [
+            "Barieră",
             "Calea Galați",
             "Central",
             "Călărași",
@@ -315,6 +321,7 @@
             "Bălcescu",
             "Contactoare",
             "Crig",
+            "Dorobanți 1",
             "Dorobanți 2",
             "Industrială",
             "Micro 14",
@@ -331,6 +338,7 @@
         ],
         "Bârlad": [
             "Central",
+            "Nord",
             "Periferie",
             "Sud-Est"
         ],
@@ -394,6 +402,7 @@
             "Abator",
             "Anda",
             "Aurel Vlaicu",
+            "Balada",
             "Boema",
             "Boreal",
             "Brotăcei",
@@ -483,13 +492,18 @@
         ],
         "Deva": [
             "Astoria",
+            "Bălcescu",
             "Central",
             "Dorobanți",
             "Gojdu",
+            "Mărăști",
             "Piața Centrală",
             "Pietroasa",
             "Ultracentral",
             "Împăratul Traian"
+        ],
+        "Dorohoi": [
+            "Central"
         ],
         "Drobeta-Turnu Severin": [
             "Aluniș",
@@ -537,6 +551,7 @@
             "Micro 14",
             "Micro 16",
             "Micro 17",
+            "Micro 18",
             "Micro 19",
             "Micro 20",
             "Micro 21",
@@ -556,7 +571,8 @@
         ],
         "Ghimbav": [
             "Central",
-            "Ghimbav Livadă"
+            "Ghimbav Livadă",
+            "Ultracentral"
         ],
         "Giurgiu": [
             "Central",
@@ -568,6 +584,7 @@
             "Central"
         ],
         "Găești": [
+            "Central",
             "Nord"
         ],
         "Hunedoara": [
@@ -589,6 +606,7 @@
             "Cug",
             "Dacia",
             "Dancu",
+            "Exterior Est",
             "Frumoasa",
             "Galata",
             "Gară",
@@ -608,6 +626,7 @@
             "Primăverii",
             "Păcurari",
             "Sud",
+            "Sărărie",
             "Tudor Vladimirescu",
             "Târgu Cucu",
             "Tătărași",
@@ -649,6 +668,7 @@
             "Central",
             "Est",
             "Exterior Est",
+            "Exterior Nord",
             "Exterior Sud",
             "Nord",
             "Nord-Est",
@@ -665,6 +685,9 @@
         "Miercurea-Ciuc": [
             "Central"
         ],
+        "Mioveni": [
+            "Central"
+        ],
         "Mizil": [
             "Central"
         ],
@@ -676,6 +699,9 @@
         ],
         "Nehoiu": [
             "Ultracentral"
+        ],
+        "Neptun": [
+            "Central"
         ],
         "Năvodari": [
             "Central",
@@ -711,6 +737,7 @@
             "Iosia-Nord",
             "Nufărul",
             "Rogerius",
+            "Seleuș",
             "Spitalul Județean",
             "Ultracentral"
         ],
@@ -731,7 +758,8 @@
             "Ultracentral"
         ],
         "Ovidiu": [
-            "Central"
+            "Central",
+            "Est"
         ],
         "Pantelimon": [
             "Central",
@@ -765,6 +793,7 @@
             "Central",
             "Craiovei",
             "Eremia",
+            "Est",
             "Exercițiu",
             "Frații Golești",
             "Găvana",
@@ -775,6 +804,7 @@
             "Nord",
             "Popa Șapcă",
             "Prundu",
+            "Războieni",
             "Teilor",
             "Trivale",
             "Ultracentral"
@@ -800,6 +830,7 @@
             "Nord - Spitalul Județean",
             "P-ța Mihai Viteazu",
             "Republicii",
+            "Sud",
             "Ultracentral",
             "Vest",
             "Vest - Lamâița"
@@ -851,6 +882,7 @@
             "Central",
             "Est",
             "Libertății",
+            "Nord",
             "Ostroveni",
             "Traian",
             "Ultracentral",
@@ -887,6 +919,7 @@
             "Bucureștii Noi",
             "Băneasa",
             "Capitale",
+            "Casin",
             "Chibrit",
             "Chitila",
             "Clucerului",
@@ -1125,7 +1158,8 @@
             "Zahana"
         ],
         "Slobozia": [
-            "Central"
+            "Central",
+            "Pieții"
         ],
         "Slănic-Moldova": [
             "Central"
@@ -1216,15 +1250,18 @@
             "Timocului-Șaguna",
             "Tipografilor",
             "Torontalului",
+            "Traian",
             "UMT",
             "Ultracentral",
             "Șagului"
+        ],
+        "Titu": [
+            "Vest"
         ],
         "Topoloveni": [
             "Central"
         ],
         "Tulcea": [
-            "23 August",
             "23-Aug",
             "Babadag",
             "Big",
@@ -1250,6 +1287,7 @@
             "Micro 11",
             "Micro 12",
             "Micro 2",
+            "Micro 3",
             "Micro 5",
             "Micro 6",
             "Micro 9"
@@ -1305,6 +1343,7 @@
             "Centrul Istoric",
             "Cișmigiu",
             "Kogălniceanu",
+            "Lipscani",
             "Magheru",
             "Matei Voievod",
             "Mitropolie",
@@ -1314,6 +1353,7 @@
             "P-ța Sfântul Ștefan",
             "P-ța Universității",
             "P-ța Victoriei",
+            "Plevnei",
             "Romană",
             "Rosetti",
             "Sala Palatului",
@@ -1333,6 +1373,8 @@
             "Breaza de Jos",
             "Bucov",
             "Bucovăț (Remetea Mare)",
+            "Buziaș",
+            "Cernica",
             "Chiajna",
             "Chinteni",
             "Chitila",
@@ -1377,6 +1419,7 @@
             "Moinești",
             "Moșnița Nouă",
             "Mârșa",
+            "Măgura",
             "Măgurele",
             "Neptun",
             "Năvodari",
@@ -1393,11 +1436,13 @@
             "Popești-Leordeni",
             "Păulești",
             "Rediu",
+            "Remetea Mare",
             "Roșu",
             "Satu Mare",
             "Schitu",
             "Sfântu Ilie",
             "Snagov",
+            "Strejnicu",
             "Stâncești",
             "Sânandrei",
             "Sângeorgiu de Mureș",
@@ -1408,6 +1453,7 @@
             "Turda",
             "Tâncăbești",
             "Târnăveni",
+            "Tărlungeni",
             "Ultracentral",
             "Unirea",
             "Valea Adâncă",
