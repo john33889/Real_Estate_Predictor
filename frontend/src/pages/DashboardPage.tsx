@@ -1,6 +1,6 @@
 import { useEffect, useState, useMemo } from "react";
 import { useNavigate } from "react-router-dom";
-import { BarChart, Bar, XAxis, YAxis, ResponsiveContainer, Tooltip, Cell, LineChart, Line, CartesianGrid, Area, AreaChart } from "recharts";
+import { BarChart, Bar, XAxis, YAxis, ResponsiveContainer, Tooltip, Cell, CartesianGrid, Area, AreaChart } from "recharts";
 import { loadCsvData, type RealEstateRow } from "../utils/csvData";
 
 export default function DashboardPage() {
@@ -209,7 +209,7 @@ export default function DashboardPage() {
                         <YAxis stroke="rgba(255,255,255,0.6)" style={{ fontSize: 12 }} tickFormatter={(v) => `${(v / 1000).toFixed(0)}k`} />
                         <Tooltip
                           contentStyle={{ background: "rgba(15, 61, 46, 0.95)", border: "1px solid rgba(249,217,118,0.4)", borderRadius: 10, color: "#fff" }}
-                          formatter={(value: number, name: string) => {
+                          formatter={(value: any, name: any) => {
                             if (name === "avgPrice") return [`${value.toLocaleString("ro-RO")} €`, "Preț mediu"];
                             if (name === "listings") return [value, "Anunțuri"];
                             return [value, name];
@@ -235,7 +235,7 @@ export default function DashboardPage() {
                         <YAxis stroke="rgba(255,255,255,0.6)" style={{ fontSize: 12 }} tickFormatter={(v) => `${(v / 1000).toFixed(0)}k`} />
                         <Tooltip
                           contentStyle={{ background: "rgba(15, 61, 46, 0.95)", border: "1px solid rgba(249,217,118,0.4)", borderRadius: 10, color: "#fff" }}
-                          formatter={(value: number) => [`${value.toLocaleString("ro-RO")} €`, "Preț mediu"]}
+                         formatter={(value: any) => [`${value.toLocaleString("ro-RO")} €`, "Preț mediu"]}
                           cursor={{ fill: "rgba(249,217,118,0.1)" }}
                         />
                         <Bar dataKey="avgPrice" radius={[8, 8, 0, 0]}>
@@ -293,7 +293,7 @@ export default function DashboardPage() {
                         <YAxis stroke="rgba(255,255,255,0.6)" style={{ fontSize: 12 }} />
                         <Tooltip
                           contentStyle={{ background: "rgba(15, 61, 46, 0.95)", border: "1px solid rgba(0,214,143,0.4)", borderRadius: 10, color: "#fff" }}
-                          formatter={(value: number) => [value.toLocaleString("ro-RO"), "Anunțuri"]}
+                         formatter={(value: any) => [value.toLocaleString("ro-RO"), "Anunțuri"]}
                           cursor={{ fill: "rgba(0,214,143,0.1)" }}
                         />
                         <Bar dataKey="value" fill="rgba(0,214,143,0.7)" radius={[8, 8, 0, 0]} />
